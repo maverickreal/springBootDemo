@@ -13,7 +13,7 @@ import jakarta.persistence.GenerationType;
 public class Customer {
     private String name;
     private String email;
-    @Id @SequenceGenerator(name = "customer_id_sequence", sequenceName = "customer_id_sequence") @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_id_sequence")
+    @Id @SequenceGenerator(name = "customer_id_sequence", sequenceName = "customer_id_sequence", allocationSize = 1) @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_id_sequence")
     private int id;
     private int age;
 
@@ -40,6 +40,22 @@ public class Customer {
 
     public int getAge() {
         return age;
+    }
+
+    public void setName(String Name){
+        name = Name;
+    }
+
+    public void setEmail(String Email) {
+        email = Email;
+    }
+
+    public void setId(int Id) {
+        id = Id;
+    }
+
+    public void setAge(int Age) {
+        age = Age;
     }
 
     @Override
